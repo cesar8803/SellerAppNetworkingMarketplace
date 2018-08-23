@@ -10,6 +10,10 @@
 		48103F06212DD8AE00F7C1E7 /* SellerAppNetworkingMarketplace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48103EFC212DD8AD00F7C1E7 /* SellerAppNetworkingMarketplace.framework */; };
 		48103F0B212DD8AE00F7C1E7 /* SellerAppNetworkingMarketplaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48103F0A212DD8AE00F7C1E7 /* SellerAppNetworkingMarketplaceTests.swift */; };
 		48103F0D212DD8AE00F7C1E7 /* SellerAppNetworkingMarketplace.h in Headers */ = {isa = PBXBuildFile; fileRef = 48103EFF212DD8AE00F7C1E7 /* SellerAppNetworkingMarketplace.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		48AC0741212E093D00FA7CD5 /* BackendUrlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AC0740212E093D00FA7CD5 /* BackendUrlManager.swift */; };
+		48AC0743212E095600FA7CD5 /* AsyncClientMarketplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AC0742212E095600FA7CD5 /* AsyncClientMarketplace.swift */; };
+		48AC0745212E0B7E00FA7CD5 /* MarketplaceConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AC0744212E0B7E00FA7CD5 /* MarketplaceConnection.swift */; };
+		7CAF8F709EF5240C5CBC212A /* Pods_SellerAppNetworkingMarketplace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69CDD0D6F472B169A620D720 /* Pods_SellerAppNetworkingMarketplace.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,12 @@
 		48103F05212DD8AE00F7C1E7 /* SellerAppNetworkingMarketplaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SellerAppNetworkingMarketplaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48103F0A212DD8AE00F7C1E7 /* SellerAppNetworkingMarketplaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerAppNetworkingMarketplaceTests.swift; sourceTree = "<group>"; };
 		48103F0C212DD8AE00F7C1E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48AC0740212E093D00FA7CD5 /* BackendUrlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendUrlManager.swift; sourceTree = "<group>"; };
+		48AC0742212E095600FA7CD5 /* AsyncClientMarketplace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncClientMarketplace.swift; sourceTree = "<group>"; };
+		48AC0744212E0B7E00FA7CD5 /* MarketplaceConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceConnection.swift; sourceTree = "<group>"; };
+		49D4CE3FFDF9622D2F6CF160 /* Pods-SellerAppNetworkingMarketplace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingMarketplace.release.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingMarketplace/Pods-SellerAppNetworkingMarketplace.release.xcconfig"; sourceTree = "<group>"; };
+		69CDD0D6F472B169A620D720 /* Pods_SellerAppNetworkingMarketplace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SellerAppNetworkingMarketplace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6EFF1E998004A7FA1E24BED /* Pods-SellerAppNetworkingMarketplace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingMarketplace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingMarketplace/Pods-SellerAppNetworkingMarketplace.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CAF8F709EF5240C5CBC212A /* Pods_SellerAppNetworkingMarketplace.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,12 +61,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11E7EE640699CE54F2B51398 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B6EFF1E998004A7FA1E24BED /* Pods-SellerAppNetworkingMarketplace.debug.xcconfig */,
+				49D4CE3FFDF9622D2F6CF160 /* Pods-SellerAppNetworkingMarketplace.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		48103EF2212DD8AD00F7C1E7 = {
 			isa = PBXGroup;
 			children = (
 				48103EFE212DD8AD00F7C1E7 /* SellerAppNetworkingMarketplace */,
 				48103F09212DD8AE00F7C1E7 /* SellerAppNetworkingMarketplaceTests */,
 				48103EFD212DD8AD00F7C1E7 /* Products */,
+				11E7EE640699CE54F2B51398 /* Pods */,
+				ADCFC49DDB5CF87080050FE3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +93,8 @@
 		48103EFE212DD8AD00F7C1E7 /* SellerAppNetworkingMarketplace */ = {
 			isa = PBXGroup;
 			children = (
+				48AC073F212E091900FA7CD5 /* AsyncClientMarketplaceObjects */,
+				48AC073E212E091900FA7CD5 /* Services */,
 				48103EFF212DD8AE00F7C1E7 /* SellerAppNetworkingMarketplace.h */,
 				48103F00212DD8AE00F7C1E7 /* Info.plist */,
 			);
@@ -84,6 +108,31 @@
 				48103F0C212DD8AE00F7C1E7 /* Info.plist */,
 			);
 			path = SellerAppNetworkingMarketplaceTests;
+			sourceTree = "<group>";
+		};
+		48AC073E212E091900FA7CD5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				48AC0740212E093D00FA7CD5 /* BackendUrlManager.swift */,
+				48AC0744212E0B7E00FA7CD5 /* MarketplaceConnection.swift */,
+				48AC0742212E095600FA7CD5 /* AsyncClientMarketplace.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		48AC073F212E091900FA7CD5 /* AsyncClientMarketplaceObjects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AsyncClientMarketplaceObjects;
+			sourceTree = "<group>";
+		};
+		ADCFC49DDB5CF87080050FE3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				69CDD0D6F472B169A620D720 /* Pods_SellerAppNetworkingMarketplace.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,6 +153,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48103F10212DD8AE00F7C1E7 /* Build configuration list for PBXNativeTarget "SellerAppNetworkingMarketplace" */;
 			buildPhases = (
+				893A090A878A7DF10A0BC802 /* [CP] Check Pods Manifest.lock */,
 				48103EF7212DD8AD00F7C1E7 /* Sources */,
 				48103EF8212DD8AD00F7C1E7 /* Frameworks */,
 				48103EF9212DD8AD00F7C1E7 /* Headers */,
@@ -148,6 +198,7 @@
 				TargetAttributes = {
 					48103EFB212DD8AD00F7C1E7 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					48103F04212DD8AE00F7C1E7 = {
@@ -191,11 +242,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		893A090A878A7DF10A0BC802 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SellerAppNetworkingMarketplace-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		48103EF7212DD8AD00F7C1E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48AC0741212E093D00FA7CD5 /* BackendUrlManager.swift in Sources */,
+				48AC0745212E0B7E00FA7CD5 /* MarketplaceConnection.swift in Sources */,
+				48AC0743212E095600FA7CD5 /* AsyncClientMarketplace.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -321,7 +396,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -333,7 +408,9 @@
 		};
 		48103F11212DD8AE00F7C1E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6EFF1E998004A7FA1E24BED /* Pods-SellerAppNetworkingMarketplace.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -347,14 +424,17 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mx.com.liverpool.appvendedor.marketplacepod.SellerAppNetworkingMarketplace;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		48103F12212DD8AE00F7C1E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49D4CE3FFDF9622D2F6CF160 /* Pods-SellerAppNetworkingMarketplace.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -368,7 +448,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mx.com.liverpool.appvendedor.marketplacepod.SellerAppNetworkingMarketplace;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -376,6 +456,7 @@
 		48103F14212DD8AE00F7C1E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K62NRM4MSY;
 				INFOPLIST_FILE = SellerAppNetworkingMarketplaceTests/Info.plist;
@@ -390,6 +471,7 @@
 		48103F15212DD8AE00F7C1E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K62NRM4MSY;
 				INFOPLIST_FILE = SellerAppNetworkingMarketplaceTests/Info.plist;
