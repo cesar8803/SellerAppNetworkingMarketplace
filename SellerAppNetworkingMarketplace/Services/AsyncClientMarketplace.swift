@@ -15,7 +15,21 @@ public typealias ErrorStringHandler = (_ errorString:String) -> Void
 
 
 public class AsyncClientMarketplace{
-    
+    /************** Petición GET **********************/
+    class func getRequestExecute<T:Mappable>(_ type:BackendUrlManager.ServiceUrlsId, completion:@escaping (_ dataResponse:T) -> Void, errorCompletition: @escaping (_ errorString:String) -> Void){
+        
+        let url = BackendUrlManager.Current.getUrl(type)
+        
+        Alamofire.request(url, method: .get).responseObject { (response: DataResponse<T>) in
+            
+            if response.result.isSuccess{
+                let responseService = response.result.value
+                completion(responseService!)
+            } else {
+                errorCompletition((response.result.error?.localizedDescription)!)
+            }
+        }
+    }
     /************** Petición POST **********************/
     class func postRequestExecuteWithTimeOut<T:Mappable>(_ _Type:BackendUrlManager.ServiceUrlsId, _Parameters: Parameters, _ViewLoader:Bool, _MsjLoader: String,_Completion:@escaping (_ _postRequest: T) -> Void, _ErrorCompletition: @escaping (_ errorString:String) -> Void){
         
@@ -110,5 +124,18 @@ public class AsyncClientMarketplace{
         viewController.present(alert, animated: true, completion: nil)
     }
     
+    //MARK: - Facturacion
+    class public func  getFacturacionDico(
+        completion:@escaping (_ dataResponse: [ItemDico]? )-> Void,
+        completionError: @escaping ErrorStringHandler )
+    {
+        AsyncClientMarketplace.getRequestExecute(
+            BackendUrlManager.ServiceUrlsId.getConfigurationDetailsInvoice,
+            completion: { (Response : ResponseConfDetailsInvoice) in
+                completion(Response.countries) })
+        { (msg) in
+            completionError(msg)
+        }
+    }
     
 }

@@ -13,10 +13,12 @@ class BackendUrlManager : NSObject{
     
     enum ServiceUrlsId : Int {
         case createOrderMirakl
+        case getConfigurationDetailsInvoice
     }
     
     fileprivate static let SERVICE_CONTEXT:[String] = [
-        "Middleware/rest/service/endeca-home?",                                 //createOrderMirkl
+        "Middleware/rest/service/endeca-home?",                                     //createOrderMirkl
+        "Middleware/rest/service/v1/marketplace/getConfigurationDetailsInvoice",    //getConfigurationDetailsInvoice
     ]
     
     // The array of all the services url's.
