@@ -8,11 +8,19 @@
 
 import Foundation
 
-public typealias errorHandler = (_ errorString:String) -> Void
-
 public class RemisionService
 {
-    class public func createMKPOrder(parameters: [AnyObject], completion:@escaping (_ dataResponse: responseOrder)-> Void, completionError: @escaping errorHandler){
+    class public func createMKPOrder(parameters: [String:Any], completion:@escaping (_ dataResponse: responseOrder)-> Void, completionError: @escaping ErrorStringHandler){
+        
+        AsyncClientMarketplace.postRequestExecute(
+            BackendUrlManager.ServiceUrlsId.createOrderMirakl,
+            parameters: parameters,
+            completion: { (Response : responseOrder) in
+                
+        },
+            errorCompletition: { (msg) in
+                completionError(msg)
+        })
         
     }
 }
