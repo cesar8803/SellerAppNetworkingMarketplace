@@ -14,6 +14,8 @@
 		48AC0743212E095600FA7CD5 /* AsyncClientMarketplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AC0742212E095600FA7CD5 /* AsyncClientMarketplace.swift */; };
 		48AC0745212E0B7E00FA7CD5 /* MarketplaceConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AC0744212E0B7E00FA7CD5 /* MarketplaceConnection.swift */; };
 		7CAF8F709EF5240C5CBC212A /* Pods_SellerAppNetworkingMarketplace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69CDD0D6F472B169A620D720 /* Pods_SellerAppNetworkingMarketplace.framework */; };
+		B5DEAA61213DAAC600B63CF0 /* RemisionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DEAA60213DAAC600B63CF0 /* RemisionService.swift */; };
+		B5DEAA63213DAD6F00B63CF0 /* responseOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DEAA62213DAD6F00B63CF0 /* responseOrder.swift */; };
 		F4F094CC213DA57C00BEECB8 /* ResponseInvoiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F094CB213DA57C00BEECB8 /* ResponseInvoiceRequest.swift */; };
 		F4F1337321383A280062F71A /* ResponseConfDetailsInvoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F1337221383A280062F71A /* ResponseConfDetailsInvoice.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +42,8 @@
 		48AC0744212E0B7E00FA7CD5 /* MarketplaceConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceConnection.swift; sourceTree = "<group>"; };
 		49D4CE3FFDF9622D2F6CF160 /* Pods-SellerAppNetworkingMarketplace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingMarketplace.release.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingMarketplace/Pods-SellerAppNetworkingMarketplace.release.xcconfig"; sourceTree = "<group>"; };
 		69CDD0D6F472B169A620D720 /* Pods_SellerAppNetworkingMarketplace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SellerAppNetworkingMarketplace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5DEAA60213DAAC600B63CF0 /* RemisionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemisionService.swift; sourceTree = "<group>"; };
+		B5DEAA62213DAD6F00B63CF0 /* responseOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = responseOrder.swift; sourceTree = "<group>"; };
 		B6EFF1E998004A7FA1E24BED /* Pods-SellerAppNetworkingMarketplace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingMarketplace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingMarketplace/Pods-SellerAppNetworkingMarketplace.debug.xcconfig"; sourceTree = "<group>"; };
 		F4F094CB213DA57C00BEECB8 /* ResponseInvoiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseInvoiceRequest.swift; sourceTree = "<group>"; };
 		F4F1337221383A280062F71A /* ResponseConfDetailsInvoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseConfDetailsInvoice.swift; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				F4F1337221383A280062F71A /* ResponseConfDetailsInvoice.swift */,
+				B5DEAA60213DAAC600B63CF0 /* RemisionService.swift */,
+				B5DEAA62213DAD6F00B63CF0 /* responseOrder.swift */,
 				F4F094CB213DA57C00BEECB8 /* ResponseInvoiceRequest.swift */,
 			);
 			path = Model;
@@ -285,6 +291,8 @@
 				48AC0741212E093D00FA7CD5 /* BackendUrlManager.swift in Sources */,
 				48AC0745212E0B7E00FA7CD5 /* MarketplaceConnection.swift in Sources */,
 				F4F1337321383A280062F71A /* ResponseConfDetailsInvoice.swift in Sources */,
+				B5DEAA63213DAD6F00B63CF0 /* responseOrder.swift in Sources */,
+				B5DEAA61213DAAC600B63CF0 /* RemisionService.swift in Sources */,
 				F4F094CC213DA57C00BEECB8 /* ResponseInvoiceRequest.swift in Sources */,
 				48AC0743212E095600FA7CD5 /* AsyncClientMarketplace.swift in Sources */,
 			);
