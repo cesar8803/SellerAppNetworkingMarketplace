@@ -16,6 +16,7 @@
 		7CAF8F709EF5240C5CBC212A /* Pods_SellerAppNetworkingMarketplace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69CDD0D6F472B169A620D720 /* Pods_SellerAppNetworkingMarketplace.framework */; };
 		B5DEAA61213DAAC600B63CF0 /* RemisionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DEAA60213DAAC600B63CF0 /* RemisionService.swift */; };
 		B5DEAA63213DAD6F00B63CF0 /* responseOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DEAA62213DAD6F00B63CF0 /* responseOrder.swift */; };
+		F4F094CC213DA57C00BEECB8 /* ResponseInvoiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F094CB213DA57C00BEECB8 /* ResponseInvoiceRequest.swift */; };
 		F4F1337321383A280062F71A /* ResponseConfDetailsInvoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F1337221383A280062F71A /* ResponseConfDetailsInvoice.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		B5DEAA60213DAAC600B63CF0 /* RemisionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemisionService.swift; sourceTree = "<group>"; };
 		B5DEAA62213DAD6F00B63CF0 /* responseOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = responseOrder.swift; sourceTree = "<group>"; };
 		B6EFF1E998004A7FA1E24BED /* Pods-SellerAppNetworkingMarketplace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingMarketplace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingMarketplace/Pods-SellerAppNetworkingMarketplace.debug.xcconfig"; sourceTree = "<group>"; };
+		F4F094CB213DA57C00BEECB8 /* ResponseInvoiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseInvoiceRequest.swift; sourceTree = "<group>"; };
 		F4F1337221383A280062F71A /* ResponseConfDetailsInvoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseConfDetailsInvoice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +150,7 @@
 				F4F1337221383A280062F71A /* ResponseConfDetailsInvoice.swift */,
 				B5DEAA60213DAAC600B63CF0 /* RemisionService.swift */,
 				B5DEAA62213DAD6F00B63CF0 /* responseOrder.swift */,
+				F4F094CB213DA57C00BEECB8 /* ResponseInvoiceRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				F4F1337321383A280062F71A /* ResponseConfDetailsInvoice.swift in Sources */,
 				B5DEAA63213DAD6F00B63CF0 /* responseOrder.swift in Sources */,
 				B5DEAA61213DAAC600B63CF0 /* RemisionService.swift in Sources */,
+				F4F094CC213DA57C00BEECB8 /* ResponseInvoiceRequest.swift in Sources */,
 				48AC0743212E095600FA7CD5 /* AsyncClientMarketplace.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
