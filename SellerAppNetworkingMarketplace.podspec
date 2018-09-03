@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 s.name         = "SellerAppNetworkingMarketplace"
 s.swift_version = '3.2'
-s.version      = "1.0.0"
+s.version      = "1.0.1"
 s.summary      = "Pod con la colección de servicios de Marketplace - Mirakl."
 
 s.description  = "Pod con la colección de servicios de Marketplace - Mirakl."
