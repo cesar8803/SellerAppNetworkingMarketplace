@@ -13,7 +13,7 @@ public class MarketplaceConnection{
     
     public static let sharedInstance:MarketplaceConnection = MarketplaceConnection()
     
-    public var baseURLString:String = "" {
+    public var baseURLString:String = "http://172.22.49.66:9090" {
         didSet {
             // Updating the URLs with the new middleware IP assigned in the Middleware Connection Singleton
             BackendUrlManager.Current.updateUrls()
@@ -21,3 +21,4 @@ public class MarketplaceConnection{
     }
     
 }
+
