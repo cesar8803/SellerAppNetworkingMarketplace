@@ -11,14 +11,14 @@ import ObjectMapper
 
 public class ResponseConfDetailsInvoice:Mappable{
     
-    public var cdis         :[ItemDico]?
+    public var cfdis         :[ItemDico]?
     public var countries    :[ItemDico]?
     
     public required init?(map: Map){
     }
     
     public func mapping(map: Map){
-        cdis <- map["cdis"]
+        cfdis <- map["cfdis"]
         countries <- map["paises"]
     }
 }
@@ -35,3 +35,4 @@ public class ItemDico:Mappable{
         value <- map["value"]
     }
 }
+

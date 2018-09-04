@@ -21,7 +21,7 @@ public class AsyncClientMarketplace{
         completion:@escaping (_ dataResponse:T) -> Void,
         errorCompletition: @escaping (_ errorString:String) -> Void){
         
-        let url = BackendUrlManager.Current.getUrl(type)
+        let url:URL! = URL(string: BackendUrlManager.Current.getUrl(type))
         
         Alamofire.request(url, method: .get).responseObject { (response: DataResponse<T>) in
             
@@ -62,7 +62,7 @@ public class AsyncClientMarketplace{
             }
         }
     }
-
+    
     
     /************** Petición POST Serializa un objeto JSON**********************/
     
@@ -101,18 +101,18 @@ public class AsyncClientMarketplace{
         errorCompletition: @escaping (_ errorString:String) -> Void){
         
         
-        let _Url = BackendUrlManager.Current.getUrl(type)
-        Alamofire.request(_Url, method: .put,
+        let url = BackendUrlManager.Current.getUrl(type)
+        Alamofire.request(url, method: .put,
                           parameters: parameters,
                           encoding: URLEncoding.default).responseObject { (response: DataResponse<T>) in
-            
-            if response.result.isSuccess{
-                let responseService = response.result.value
-                completion(responseService!)
-                
-            }else{
-                errorCompletition((response.result.error?.localizedDescription)!)
-            }
+                            
+                            if response.result.isSuccess{
+                                let responseService = response.result.value
+                                completion(responseService!)
+                                
+                            }else{
+                                errorCompletition((response.result.error?.localizedDescription)!)
+                            }
         }
     }
     
@@ -150,7 +150,7 @@ public class AsyncClientMarketplace{
     }
     
     //MARK: - Facturacion
-    class public func getFacturacionDico(
+    class public func getFacturacionDicoCountry(
         completion      : @escaping (_ dataResponse: [ItemDico]? )-> Void,
         completionError : @escaping ErrorStringHandler )
     {
@@ -158,6 +158,19 @@ public class AsyncClientMarketplace{
             BackendUrlManager.ServiceUrlsId.getConfigurationDetailsInvoice,
             completion: { (Response : ResponseConfDetailsInvoice) in
                 completion(Response.countries) })
+        { (msg) in
+            completionError(msg)
+        }
+    }
+    
+    class public func getFacturacionDicoCfdi(
+        completion      : @escaping (_ dataResponse: [ItemDico]? )-> Void,
+        completionError : @escaping ErrorStringHandler )
+    {
+        AsyncClientMarketplace.getRequestExecute(
+            BackendUrlManager.ServiceUrlsId.getConfigurationDetailsInvoice,
+            completion: { (Response : ResponseConfDetailsInvoice) in
+                completion(Response.cfdis) })
         { (msg) in
             completionError(msg)
         }
@@ -180,3 +193,4 @@ public class AsyncClientMarketplace{
     }
     
 }
+
