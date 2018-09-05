@@ -176,11 +176,42 @@ public class AsyncClientMarketplace{
         }
     }
     
+    enum pageEnum : Int{
+        case FisicalMoral = 0, Extranjero = 1, Acreditar = 2
+        func value() -> String {
+            switch (self) {
+            case .FisicalMoral:return "Fisica/Moral"
+            case .Extranjero:return "Extranjero"
+            case .Acreditar:return "Acreditar"
+            }}
+    }
+    
     class public func invoiceRequest(
         parameters      : [String: Any],
         completion      : @escaping (_ dataResponse: ResponseInvoiceRequest? )-> Void,
         completionError : @escaping ErrorStringHandler )
     {
+        
+        var params : [String: Any] = [:]
+        let page : pageEnum = pageEnum(rawValue:
+            ( parameters["invoiceType"] != nil ?
+                parameters["invoiceType"] as! Int: 0))!
+        
+        params["page"]              = page.value() //"Fisica/Moral" or "Extranjero" or "Acreditar"
+        params["trackingNumber"]    = parameters["trackingNumber"] ?? "8988998"
+        params["rfc1"]              = parameters["invoiceRFC"] ?? ""
+        params["rfc2"]              = "" //parameters["invoiceRFC"] ?? ""
+        params["rfc3"]              = "" //parameters["invoiceRFC"] ?? ""
+        params["emailId"]           = parameters["invoiceEmail"] ?? ""
+        params["usoCFDI"]           = parameters["usoCFDI"] ?? ""
+        params["country"]           = parameters["country"] ?? ""
+        params["taxRegistration"]   = "" //"CPF"
+        params["tipoDePersona"]     = parameters["tipoDePersona"] ?? "" //(“Fisica” or “Moral”)
+        params["razonSocial"]       = "" //parameters["razonSocial"] ?? ""
+        params["name"]              = parameters["name"] ?? ""
+        params["paternalName"]      = parameters["paternalName"] ?? ""
+        params["maternalName"]      = parameters["maternalName"] ?? ""
+        
         AsyncClientMarketplace.postRequestExecute(
             BackendUrlManager.ServiceUrlsId.invoiceRequest,
             parameters: parameters,
