@@ -214,9 +214,9 @@ public class AsyncClientMarketplace{
         
         AsyncClientMarketplace.postRequestExecute(
             BackendUrlManager.ServiceUrlsId.invoiceRequest,
-            parameters: parameters,
-            completion: { (Response : ResponseConfDetailsInvoice) in
-                
+            parameters: params,
+            completion: { (Response : ResponseInvoiceRequest) in
+                completion(Response)
         },
             errorCompletition: { (msg) in
                 completionError(msg)
