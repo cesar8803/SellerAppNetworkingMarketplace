@@ -209,7 +209,7 @@ public class AsyncClientMarketplace{
         params["country"]           = parameters["country"] ?? ""
         params["taxRegistration"]   = parameters["invoiceNumRegIdTributaria"] ?? "" //"CPF"
         params["tipoDePersona"]     = parameters["tipoDePersona"] ?? "" //(“Fisica” or “Moral”)
-        params["razonSocial"]       = "" //parameters["razonSocial"] ?? ""
+        params["razonSocial"]       = parameters["razonSocial"] ?? ""
         params["name"]              = parameters["name"] ?? ""
         params["paternalName"]      = parameters["paternalName"] ?? ""
         params["maternalName"]      = parameters["maternalName"] ?? ""
