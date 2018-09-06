@@ -197,15 +197,17 @@ public class AsyncClientMarketplace{
             ( parameters["invoiceType"] != nil ?
                 parameters["invoiceType"] as! Int: 0))!
         
+        let rfc = page == .Extranjero ? "XEXX010101000" : parameters["invoiceRFC"] ?? ""
+        
         params["page"]              = page.value() //"Fisica/Moral" or "Extranjero" or "Acreditar"
         params["trackingNumber"]    = parameters["trackingNumber"] ?? "8988998"
-        params["rfc1"]              = parameters["invoiceRFC"] ?? ""
+        params["rfc1"]              = rfc
         params["rfc2"]              = "" //parameters["invoiceRFC"] ?? ""
         params["rfc3"]              = "" //parameters["invoiceRFC"] ?? ""
         params["emailId"]           = parameters["invoiceEmail"] ?? ""
         params["usoCFDI"]           = parameters["usoCFDI"] ?? ""
         params["country"]           = parameters["country"] ?? ""
-        params["taxRegistration"]   = "" //"CPF"
+        params["taxRegistration"]   = parameters["invoiceNumRegIdTributaria"] ?? "" //"CPF"
         params["tipoDePersona"]     = parameters["tipoDePersona"] ?? "" //(“Fisica” or “Moral”)
         params["razonSocial"]       = "" //parameters["razonSocial"] ?? ""
         params["name"]              = parameters["name"] ?? ""
