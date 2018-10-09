@@ -198,15 +198,62 @@ public class AsyncClientMarketplace{
                 parameters["invoiceType"] as! Int: 0))!
         
         let rfc = page == .Extranjero ? "XEXX010101000" : parameters["invoiceRFC"] ?? ""
+        var rfc1 = "",
+        rfc2 = "",
+        rfc3 = ""
+        
+        let rfcAll = String(describing: rfc)
+        if rfcAll.count == 13{
+            
+            let start = rfcAll.index(rfcAll.startIndex, offsetBy: 4)
+            let end = rfcAll.index(rfcAll.endIndex, offsetBy: -3)
+            let range = start..<end
+            
+            rfc1 = String(rfcAll.suffix(4))
+            rfc3 = String(rfcAll.prefix(3))
+            rfc2 = String(rfcAll[range])
+        }
+        
+        var cfdi : String = String(describing: (parameters["usoCFDI"] ?? ""))
+        if cfdi != "" && cfdi.count >= 3{
+            let cfdiSplit = cfdi.components(separatedBy: " - ")
+            
+            if cfdiSplit.count > 1 {
+                
+                cfdi = cfdiSplit[1]
+                
+                if cfdiSplit.count > 2{
+                    for i in 2 ..< cfdiSplit.count{
+                        cfdi += " - " + cfdiSplit[i]
+                    }
+                }
+            }
+        }
+        
+        var pais : String = String(describing: (parameters["country"] ?? ""))
+        if pais != "" && pais.count >= 3{
+            let split = pais.components(separatedBy: " - ")
+            
+            if split.count > 1 {
+                
+                pais = split[1]
+                
+                if split.count > 2{
+                    for i in 2 ..< split.count{
+                        pais += " - " + split[i]
+                    }
+                }
+            }
+        }
         
         params["page"]              = page.value() //"Fisica/Moral" or "Extranjero" or "Acreditar"
         params["trackingNumber"]    = parameters["trackingNumber"] ?? "8988998"
-        params["rfc1"]              = rfc
-        params["rfc2"]              = "" //parameters["invoiceRFC"] ?? ""
-        params["rfc3"]              = "" //parameters["invoiceRFC"] ?? ""
+        params["rfc1"]              = rfc1 == "" ? rfc as! String : rfc1
+        params["rfc2"]              = rfc2
+        params["rfc3"]              = rfc3
         params["emailId"]           = parameters["invoiceEmail"] ?? ""
-        params["usoCFDI"]           = parameters["usoCFDI"] ?? ""
-        params["country"]           = parameters["country"] ?? ""
+        params["usoCFDI"]           = cfdi //parameters["usoCFDI"] ?? ""
+        params["country"]           = pais //parameters["country"] ?? ""
         params["taxRegistration"]   = parameters["invoiceNumRegIdTributaria"] ?? "" //"CPF"
         params["tipoDePersona"]     = parameters["tipoDePersona"] ?? "" //(“Fisica” or “Moral”)
         params["razonSocial"]       = parameters["razonSocial"] ?? ""
@@ -226,4 +273,5 @@ public class AsyncClientMarketplace{
     }
     
 }
+
 

@@ -20,7 +20,7 @@ class BackendUrlManager : NSObject{
     fileprivate static let SERVICE_CONTEXT:[String] = [
         "Middleware/rest/service/endeca-home?",                                     //createOrderMirkl
         "Middleware/rest/service/v1/marketplace/getConfigurationDetailsInvoice",    //getConfigurationDetailsInvoice
-        "Middleware/rest/service/v1/marketplace/submitUserInvoice",                 //invoiceRequest
+        "Middleware/rest/service/v1/marketplace/submitUserInvoice2",                 //invoiceRequest
     ]
     
     // The array of all the services url's.
