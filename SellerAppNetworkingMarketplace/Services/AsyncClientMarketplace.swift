@@ -209,8 +209,8 @@ public class AsyncClientMarketplace{
             let end = rfcAll.index(rfcAll.endIndex, offsetBy: -3)
             let range = start..<end
             
-            rfc1 = String(rfcAll.suffix(4))
-            rfc3 = String(rfcAll.prefix(3))
+            rfc1 = String(rfcAll.prefix(4))
+            rfc3 = String(rfcAll.suffix(3))
             rfc2 = String(rfcAll[range])
         }
         
@@ -265,7 +265,11 @@ public class AsyncClientMarketplace{
             BackendUrlManager.ServiceUrlsId.invoiceRequest,
             parameters: params,
             completion: { (Response : ResponseInvoiceRequest) in
-                completion(Response)
+                if Response.errorDescription != nil{
+                    completionError(Response.errorDescription!)
+                }else{
+                    completion(Response)
+                }
         },
             errorCompletition: { (msg) in
                 completionError(msg)

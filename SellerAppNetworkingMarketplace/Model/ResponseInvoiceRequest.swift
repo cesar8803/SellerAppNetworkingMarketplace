@@ -12,30 +12,48 @@ import ObjectMapper
 public class ResponseInvoiceRequest:Mappable{
     
     public var successMsg   :String?
-    public var errorMessages : [String:String]?
+    public var status : InvoiceRequestStatus?
+    public var errorDescription : String?
     
     public required init?(map: Map){
     }
     
     public func mapping(map: Map){
         successMsg <- map["successMsg"]
+        status <- map["status"]
+        errorDescription = status == nil ? nil : status?.errorDescription
     }
 }
 
-/*{
-"s": "1"
-"errorMessages": [
-{
-"trackingNumber": "este campo Numero de pedido es obligatorio"
-},
-{
-"rfc1": "este campo RFC es obligatorio"
-},
-{
-"usoCFDI": "este campo Uso CFDI es obligatorio"
-},
-{
-"emailId": "este campo correo electronico es obligatorio"
+public class InvoiceRequestStatus:Mappable{
+    
+    public var errorDescription : String?
+    
+    public required init?(map: Map){
+    }
+    
+    public func mapping(map: Map){
+        errorDescription <- map["detailedErrorDescription"]
+    }
 }
-]
-}*/
+
+
+
+/*{
+ "s": "1"
+ "errorMessages": [
+ {
+ "trackingNumber": "este campo Numero de pedido es obligatorio"
+ },
+ {
+ "rfc1": "este campo RFC es obligatorio"
+ },
+ {
+ "usoCFDI": "este campo Uso CFDI es obligatorio"
+ },
+ {
+ "emailId": "este campo correo electronico es obligatorio"
+ }
+ ]
+ }*/
+
