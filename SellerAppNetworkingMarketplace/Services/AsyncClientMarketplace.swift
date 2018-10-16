@@ -198,10 +198,7 @@ public class AsyncClientMarketplace{
                 parameters["invoiceType"] as! Int: 0))!
         
         let rfc =
-            (page == .Extranjero) ||
-                (page == .Acreditar &&
-                    "\(parameters["tipoDePersona"] ?? "" )"  == "Moral") ?
-                        "XEXX010101000" : parameters["invoiceRFC"] ?? ""
+            (page == .Extranjero) || (page == .Acreditar) ? "XEXX010101000" : parameters["invoiceRFC"] ?? ""
         var rfc1 = "",
         rfc2 = "",
         rfc3 = ""
