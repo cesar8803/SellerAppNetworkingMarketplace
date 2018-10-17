@@ -266,8 +266,8 @@ public class AsyncClientMarketplace{
             BackendUrlManager.ServiceUrlsId.invoiceRequest,
             parameters: params,
             completion: { (Response : ResponseInvoiceRequest) in
-                if Response.errorDescription != nil{
-                    completionError(Response.errorDescription!)
+                if Response.status?.statusCode == 1 {
+                    completionError(Response.status?.errorDescription ?? "")
                 }else{
                     completion(Response)
                 }

@@ -21,18 +21,23 @@ public class ResponseInvoiceRequest:Mappable{
     public func mapping(map: Map){
         successMsg <- map["successMsg"]
         status <- map["status"]
-        errorDescription = status == nil ? nil : status?.errorDescription
+        if status != nil && status?.statusCode == 1{
+            errorDescription = status?.errorDescription
+        }
+        
     }
 }
 
 public class InvoiceRequestStatus:Mappable{
     
+    public var statusCode : Int?
     public var errorDescription : String?
     
     public required init?(map: Map){
     }
     
     public func mapping(map: Map){
+        statusCode <- map["statusCode"]
         errorDescription <- map["detailedErrorDescription"]
     }
 }
