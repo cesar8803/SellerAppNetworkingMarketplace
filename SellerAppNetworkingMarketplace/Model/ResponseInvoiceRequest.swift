@@ -38,7 +38,7 @@ public class InvoiceRequestStatus:Mappable{
     
     public func mapping(map: Map){
         statusCode <- map["statusCode"]
-        errorDescription <- map["detailedErrorDescription"]
+        errorDescription <- map["errorDescription"]
     }
 }
 
